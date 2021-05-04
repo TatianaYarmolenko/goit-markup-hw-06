@@ -4,6 +4,7 @@
   --accent-color: #2196f3;
   --primary-white-color: #ffffff;
   --accent-grey-color: #afb1b8;
+  --animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   --dark-bg: #2f303a;
 
@@ -68,7 +69,7 @@ p {
   text-decoration: none;
 
   position: relative;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--animation);
 }
 
 .link.current::after {
@@ -172,7 +173,7 @@ p {
   line-height: 1.14;
   letter-spacing: 0.02em;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--animation);
 }
 
 .site-nav .link:hover,
@@ -207,7 +208,7 @@ p {
   padding-top: 32px;
   padding-bottom: 31px;
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--animation);
 }
 
 .auth-nav .link:hover,
@@ -415,7 +416,7 @@ p {
   border-radius: 50%;
   background-color: var(--primary-white-color);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--animation);
 }
 
 .social-icons-svg {
@@ -423,7 +424,7 @@ p {
   height: 20px;
   fill: #afb1b8;
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--animation);
 }
 
 .social-icons-link:hover .social-icons-svg,
@@ -473,7 +474,7 @@ p {
   border: 1px solid #afb1b8;
   border-radius: 4px;
 
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color var(--animation);
 }
 
 .client-icon {
@@ -481,7 +482,7 @@ p {
   height: 60px;
   fill: var(--accent-grey-color);
 
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--animation);
 }
 
 .client-link:hover .client-icon,
@@ -503,8 +504,6 @@ p {
 }
 
 .page-footer {
-  padding-top: 60px;
-  padding-bottom: 60px;
   background-color: var(--dark-bg);
 }
 
@@ -512,6 +511,8 @@ p {
   display: block;
   width: 231px;
   height: 135px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .address {
@@ -529,6 +530,8 @@ p {
   width: 250px;
   height: 135px;
   margin-left: 70px;
+  padding-top: 72px;
+  padding-bottom: 100px;
 }
 
 .footer-social .title {
@@ -569,7 +572,7 @@ p {
 
   background-color: rgba(255, 255, 255, 0.1);
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--animation);
 }
 
 .footer-icons-svg {
@@ -579,6 +582,184 @@ p {
 .footer-social .footer-icons-link:hover,
 .footer-social .footer-icons-link:focus {
   background-color: var(--accent-color);
+}
+
+.footer-input {
+  margin-left: 93px;
+}
+
+.footer-input .title {
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-top: 72px;
+
+  color: var(--primary-white-color);
+}
+
+.footer-btn {
+  display: flex;
+}
+
+.footer-btn .button {
+  display: flex;
+
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+
+  align-items: center;
+  justify-content: end;
+
+  background: var(--dark-bg);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+
+.btn-mail {
+  /* position: absolute; */
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+
+  transition: background-color var(--animation), color var(--animation);
+}
+
+.btn-mail:hover,
+.btn-mail:focus {
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  color: var(--primary-white-color);
+  letter-spacing: 0.06em;
+}
+
+.btn-input {
+  /* position: absolute; */
+  width: 200px;
+  height: 50px;
+  padding-left: 29px;
+  margin-left: 12px;
+
+  transition: background-color var(--animation), color var(--animation);
+}
+
+.btn-fly {
+  fill: var(--primary-white-color);
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity var(--animation);
+}
+
+.btn-input:hover .btn-fly,
+.btn-input:focus .btn-fly,
+.btn-input:hover,
+.btn-input:focus {
+  background-color: var(--accent-color);
+  color: var(--primary-white-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.06em;
+  opacity: 1;
+}
+
+textarea {
+  resize: none;
+}
+
+.form {
+  width: 448px;
+  /* height: 500px; */
+  outline: 3px solid tomato;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  /* padding: 40px;  */
+}
+
+.form-title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  color: var(--title-text-color);
+  margin-bottom: 12px;
+}
+
+.form-group {
+  outline: 1px solid blue;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.form-group:last-child {
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  margin: 0;
+  padding: 0;
+}
+
+.form-label {
+  /* position: relative; */
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+  margin-bottom: 4px;
+}
+
+.input-name {
+  position: relative;
+}
+
+.form-input {
+  width: 448px;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.icon-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: inline-block;
+}
+
+.form-textarea {
+  width: 448px;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 12px 14px;
+
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.form-checkbox {
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.input-checkbox {
+  color: var(--title-text-color);
+}
+
+.label-checkbox {
+  font-size: 14px;
+  line-height: 1.71;
+  color: var(--primary-text-color);
 }
 
 /* Стили для portfolio.html */
@@ -603,8 +784,7 @@ p {
   color: var(--title-text-color);
   background-color: #f5f4fa;
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--animation), color var(--animation);
 
   font-weight: 500;
   font-size: 16px;
@@ -647,7 +827,7 @@ img {
   display: block;
 
   text-decoration: none;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--animation);
 }
 
 .portfolio-link:hover,
@@ -680,7 +860,7 @@ img {
   padding: 63px 24px 63px 24px;
   text-align: center;
   justify-content: center;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--animation);
   font-size: 18px;
   line-height: 1.56;
   color: var(--primary-white-color);
@@ -696,8 +876,7 @@ img {
 
   opacity: 0;
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--animation), opacity var(--animation);
 }
 
 .card-content {
@@ -735,8 +914,7 @@ img {
   height: 100%;
 
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--animation), visibility var(--animation);
 }
 
 .backdrop.is-hidden {
