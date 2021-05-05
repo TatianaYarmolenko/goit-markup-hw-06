@@ -646,18 +646,23 @@
         </button>
         <form class="form">
           <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
-          <div class="form-group">
-            <label for="name" class="form-label">Имя</label>
-            <input
-              class="form-input input-name"
-              type="text"
-              name="user-name"
-              id="name"
-              placeholder="Иван Иванович"
-            />
-            <svg class="icon-form" width="11px" height="11px">
-              <use href="./images/icons.svg/sprite.svg#icon-person-black"></use>
-            </svg>
+          <div class="form-group ddd">
+            <label for="name" class="form-label">
+              <input
+                class="form-input"
+                type="text"
+                name="user-name"
+                id="name"
+                placeholder="Иван Иванович"
+              />
+              <span
+                class="icon-form"
+                href="./images/icons.svg/sprite.svg#icon-person-black"
+                width="11px"
+                height="11px"
+              ></span>
+              Имя</label
+            >
           </div>
 
           <div class="form-group">
@@ -694,18 +699,14 @@
           </div>
 
           <div class="form-checkbox">
-            <input
-              class="input-checkbox"
-              type="checkbox"
-              name="policy"
-              id="policy"
-            />
-            <label for="policy" class="label-checkbox"
-              >Соглашаюсь с рассылкой и принимаю Условия договора</label
+            <label class="label-checkbox">
+              <input class="input-checkbox" type="checkbox" name="policy" />
+              Соглашаюсь с рассылкой и принимаю
+              <a href="" class="form-link">Условия договора</a></label
             >
           </div>
 
-          <button type="submit">Отправить</button>
+          <button type="submit" class="btn">Отправить</button>
         </form>
       </div>
     </div>
