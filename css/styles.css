@@ -625,6 +625,50 @@ p {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
 }
+.btn-mail {
+  /* position: absolute; */
+  width: 358px;
+  height: 50px;
+  padding-left: 16px;
+
+  transition: background-color var(--animation), color var(--animation);
+}
+
+.btn-mail:hover,
+.btn-mail:focus {
+  background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  color: var(--primary-white-color);
+  letter-spacing: 0.06em;
+}
+
+.btn-input {
+  /* position: absolute; */
+  width: 200px;
+  height: 50px;
+  padding-left: 29px;
+  margin-left: 12px;
+
+  transition: background-color var(--animation), color var(--animation);
+}
+
+.btn-fly {
+  fill: var(--primary-white-color);
+  margin-left: 10px;
+  opacity: 0;
+  transition: opacity var(--animation);
+}
+
+.btn-input:hover .btn-fly,
+.btn-input:focus .btn-fly,
+.btn-input:hover,
+.btn-input:focus {
+  background-color: var(--accent-color);
+  color: var(--primary-white-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.06em;
+  opacity: 1;
+}
 
 /* Модальное окно */
 
@@ -671,6 +715,7 @@ p {
   height: 30px;
   border-radius: 50%;
   cursor: pointer;
+  color: red;
 }
 .icon-modal {
   /* fill: currentColor; */
@@ -682,55 +727,6 @@ p {
 .icon-modal:focus {
   /* fill: var(--accent-color); */
   color: var(--accent-color);
-}
-
-.btn-mail {
-  /* position: absolute; */
-  width: 358px;
-  height: 50px;
-  padding-left: 16px;
-
-  transition: background-color var(--animation), color var(--animation);
-}
-
-.btn-mail:hover,
-.btn-mail:focus {
-  background-color: var(--accent-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  color: var(--primary-white-color);
-  letter-spacing: 0.06em;
-}
-
-.btn-input {
-  /* position: absolute; */
-  width: 200px;
-  height: 50px;
-  padding-left: 29px;
-  margin-left: 12px;
-
-  transition: background-color var(--animation), color var(--animation);
-}
-
-.btn-fly {
-  fill: var(--primary-white-color);
-  margin-left: 10px;
-  opacity: 0;
-  transition: opacity var(--animation);
-}
-
-.btn-input:hover .btn-fly,
-.btn-input:focus .btn-fly,
-.btn-input:hover,
-.btn-input:focus {
-  background-color: var(--accent-color);
-  color: var(--primary-white-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  letter-spacing: 0.06em;
-  opacity: 1;
-}
-
-textarea {
-  resize: none;
 }
 
 .form {
@@ -758,13 +754,19 @@ textarea {
   margin-bottom: 10px;
 }
 
-.form-group:last-child {
+.form-group input {
+  margin: 0;
+}
+
+.form-group-comment {
+  outline: 1px solid red;
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
 }
 
-.form-group input {
-  margin: 0;
-  padding: 0;
+textarea {
+  resize: none;
 }
 
 .form-label {
@@ -775,13 +777,23 @@ textarea {
   margin-bottom: 4px;
 }
 
-.form-input {
-  width: 448px;
-  height: 40px;
+.contact-form {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: #000000;
+  cursor: pointer;
+  /* color: rgba(117, 117, 117, 0.5); */
+  width: 100%;
+
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
-  cursor: pointer;
+}
+
+.form-input {
+  height: 40px;
+  padding-left: 42px;
 }
 
 .ddd {
@@ -805,18 +817,13 @@ textarea {
 }
 
 .form-textarea {
-  width: 448px;
   height: 120px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  box-sizing: border-box;
-  border-radius: 4px;
   padding: 12px 14px;
+}
 
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
+.form-textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
-  cursor: pointer;
+  color: 1px solid #000000;
 }
 
 .form-textarea:hover,
@@ -824,28 +831,33 @@ textarea {
   border-color: var(--accent-color);
 }
 
-.form-checkbox {
-  display: flexbox;
-  text-align: center;
-  justify-content: center;
-  margin-bottom: 30px;
-  margin-top: 20px;
-}
-
-.input-checkbox {
-  color: var(--title-text-color);
-  margin-left: 12px;
-}
-
-.label-checkbox {
+.checkbox-label {
   font-size: 14px;
   line-height: 1.71;
   color: var(--primary-text-color);
-  margin-left: 9px;
+  margin-left: 12px;
 }
 
-.form-link {
-  color: var(--accent-color);
+.checkbox-label::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1.8px solid #212121;
+  border-radius: 3px;
+}
+
+.checkbox-input:checked + .checkbox-label::before {
+  background-image: url(../images/checkbox.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: var(--accent-color);
+  border: var(--accent-color);
+}
+
+.form .btn {
+  margin-top: 30px;
 }
 
 /* Стили для portfolio.html */

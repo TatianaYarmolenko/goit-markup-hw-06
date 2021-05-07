@@ -637,6 +637,8 @@
         </div>
       </div>
     </footer>
+
+    <!--Модальное окно-->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button class="modal-btn">
@@ -644,12 +646,13 @@
             <use href="./images/icons.svg/sprite.svg#icon-close"></use>
           </svg>
         </button>
+
         <form class="form">
           <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
           <div class="form-group ddd">
             <label for="name" class="form-label">
               <input
-                class="form-input"
+                class="contact-form form-input"
                 type="text"
                 name="user-name"
                 id="name"
@@ -668,43 +671,43 @@
           <div class="form-group">
             <label for="tel" class="form-label">Телефон</label>
             <input
-              class="form-input"
+              class="contact-form form-input"
               type="tel"
               name="tel"
               id="tel"
-              placeholder="+3-068-111-11-11"
             />
           </div>
 
           <div class="form-group">
             <label for="mail" class="form-label">Почта</label>
             <input
-              class="form-input"
+              class="contact-form form-input"
               type="email"
               name="mail"
               id="mail"
-              placeholder="goit@gmail.com"
             />
           </div>
 
-          <div class="form-group">
+          <div class="form-group-comment">
             <label for="comment" class="form-label">Комментарий</label>
             <textarea
-              class="form-textarea"
+              class="contact-form form-textarea"
               name="comment"
               id="comment"
-              cols="30"
-              rows="10"
+              placeholder="Введите текст"
             ></textarea>
           </div>
 
-          <div class="form-checkbox">
-            <label class="label-checkbox">
-              <input class="input-checkbox" type="checkbox" name="policy" />
-              Соглашаюсь с рассылкой и принимаю
-              <a href="" class="form-link">Условия договора</a></label
-            >
-          </div>
+          <input
+            class="checkbox-input visually-hidden"
+            type="checkbox"
+            name="user-checkbox"
+            id="checkbox"
+          />
+          <label class="checkbox-label" for="checkbox">
+            Соглашаюсь с рассылкой и принимаю
+            <a href="" class="checkbox-link">Условия договора</a></label
+          >
 
           <button type="submit" class="btn">Отправить</button>
         </form>
