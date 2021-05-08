@@ -612,24 +612,19 @@
         </div>
         <div class="footer-input">
           <h3 class="title">Подпишитесь на рассылку</h3>
-          <div class="footer-btn">
-            <button
-              type="button"
-              class="button btn-mail"
-              href="mailto:"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              E-mail
-            </button>
-            <button
-              type="button"
-              class="button btn-input"
-              href="mailto:"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Подписаться<svg class="btn-fly" width="24" height="24">
+          <div class="footer-mailing">
+            <label for="footer-email" class="form-label"></label>
+            <input
+              class="footer-mail-input"
+              type="text"
+              name="e-mail"
+              id="footer-email"
+              placeholder="E-mail"
+            />
+
+            <button type="button" class="btn footer-button">
+              Подписаться
+              <svg class="icon-send" width="24" height="24">
                 <use href="./images/icons.svg/sprite.svg#icon-send"></use>
               </svg>
             </button>
@@ -649,23 +644,17 @@
 
         <form class="form">
           <h2 class="form-title">Оставьте свои данные, мы вам перезвоним</h2>
-          <div class="form-group ddd">
-            <label for="name" class="form-label">
-              <input
-                class="contact-form form-input"
-                type="text"
-                name="user-name"
-                id="name"
-                placeholder="Иван Иванович"
-              />
-              <span
-                class="icon-form"
-                href="./images/icons.svg/sprite.svg#icon-person-black"
-                width="11px"
-                height="11px"
-              ></span>
-              Имя</label
-            >
+          <div class="form-group">
+            <label for="name" class="form-label">Имя</label>
+            <input
+              class="contact-form form-input"
+              type="text"
+              name="user-name"
+              id="name"
+            />
+            <svg class="icon-form">
+              <use href="./images/icons.svg/sprite.svg#icon-person"></use>
+            </svg>
           </div>
 
           <div class="form-group">
@@ -676,6 +665,9 @@
               name="tel"
               id="tel"
             />
+            <svg class="icon-form">
+              <use href="./images/icons.svg/sprite.svg#icon-phone"></use>
+            </svg>
           </div>
 
           <div class="form-group">
@@ -686,6 +678,9 @@
               name="mail"
               id="mail"
             />
+            <svg class="icon-form">
+              <use href="./images/icons.svg/sprite.svg#icon-email"></use>
+            </svg>
           </div>
 
           <div class="form-group-comment">
